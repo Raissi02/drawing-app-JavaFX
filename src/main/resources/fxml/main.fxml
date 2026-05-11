@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app.controller.MainController"
+            stylesheets="@../css/style.css"
+            prefWidth="1100" prefHeight="700">
+
+    <!-- ═══════════════════════════════════════════
+         TOP TOOLBAR
+    ══════════════════════════════════════════════ -->
+    <top>
+        <VBox styleClass="top-panel">
+            <!-- App title bar -->
+            <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="12">
+                <Label text="✏ Drawing Application" styleClass="app-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="MASI – Mini Projet 2025/2026" styleClass="subtitle"/>
+            </HBox>
+
+            <!-- Main toolbar -->
+            <ToolBar styleClass="main-toolbar">
+                <!-- Shape selection -->
+                <Label text="Shapes:" styleClass="toolbar-label"/>
+                <ToggleButton fx:id="btnRectangle" text="▭  Rectangle" styleClass="shape-btn"/>
+                <ToggleButton fx:id="btnCircle"    text="○  Circle"    styleClass="shape-btn"/>
+                <ToggleButton fx:id="btnLine"      text="╱  Line"      styleClass="shape-btn"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <!-- Color picker -->
+                <Label text="Color:" styleClass="toolbar-label"/>
+                <ColorPicker fx:id="colorPicker" styleClass="color-picker-btn"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <!-- Actions -->
+                <Button fx:id="btnUndo"   text="↩ Undo"   onAction="#onUndo"   styleClass="action-btn"/>
+                <Button fx:id="btnDelete" text="🗑 Delete" onAction="#onDelete" styleClass="action-btn, danger-btn"/>
+                <Button fx:id="btnSave"   text="💾 Save"   onAction="#onSave"   styleClass="action-btn, primary-btn"/>
+                <Button fx:id="btnOpen"   text="📂 Open"   onAction="#onOpen"   styleClass="action-btn, primary-btn"/>
+                <Button fx:id="btnClear"  text="✕ Clear"  onAction="#onClear"  styleClass="action-btn"/>
+
+                <Separator orientation="VERTICAL"/>
+
+                <!-- Logging strategy -->
+                <Label text="Log:" styleClass="toolbar-label"/>
+                <ComboBox fx:id="logStrategyCombo" styleClass="log-combo"/>
+            </ToolBar>
+        </VBox>
+    </top>
+
+    <!-- ═══════════════════════════════════════════
+         LEFT PANEL – Shape info
+    ══════════════════════════════════════════════ -->
+    <left>
+        <VBox styleClass="left-panel" spacing="16" minWidth="170">
+            <Label text="Shape Palette" styleClass="panel-title"/>
+
+            <VBox styleClass="palette-card" spacing="8">
+                <Label text="▭" styleClass="shape-icon"/>
+                <Label text="Rectangle" styleClass="shape-name"/>
+                <Label text="Click &amp; drag to draw" styleClass="shape-hint" wrapText="true"/>
+            </VBox>
+
+            <VBox styleClass="palette-card" spacing="8">
+                <Label text="○" styleClass="shape-icon"/>
+                <Label text="Circle" styleClass="shape-name"/>
+                <Label text="Click &amp; drag to draw" styleClass="shape-hint" wrapText="true"/>
+            </VBox>
+
+            <VBox styleClass="palette-card" spacing="8">
+                <Label text="╱" styleClass="shape-icon"/>
+                <Label text="Line" styleClass="shape-name"/>
+                <Label text="Click &amp; drag from A to B" styleClass="shape-hint" wrapText="true"/>
+            </VBox>
+
+            <Separator/>
+
+            <VBox styleClass="info-card" spacing="4">
+                <Label text="Tips" styleClass="panel-title"/>
+                <Label text="• Click shape to select" styleClass="tip" wrapText="true"/>
+                <Label text="• Ctrl+Z or Undo button" styleClass="tip" wrapText="true"/>
+                <Label text="• Delete removes selection" styleClass="tip" wrapText="true"/>
+                <Label text="• Save persists to DB" styleClass="tip" wrapText="true"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- ═══════════════════════════════════════════
+         CENTER – Drawing canvas
+    ══════════════════════════════════════════════ -->
+    <center>
+        <VBox>
+            <Pane fx:id="drawingPane" styleClass="drawing-pane" VBox.vgrow="ALWAYS"
+                  minWidth="600" minHeight="400"/>
+        </VBox>
+    </center>
+
+    <!-- ═══════════════════════════════════════════
+         RIGHT PANEL – Activity log
+    ══════════════════════════════════════════════ -->
+    <right>
+        <VBox styleClass="right-panel" spacing="8" minWidth="200" maxWidth="240">
+            <Label text="Activity Log" styleClass="panel-title"/>
+            <TextArea fx:id="logArea" styleClass="log-area" editable="false"
+                      VBox.vgrow="ALWAYS" wrapText="true"/>
+        </VBox>
+    </right>
+
+    <!-- ═══════════════════════════════════════════
+         BOTTOM – Status bar
+    ══════════════════════════════════════════════ -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="12">
+            <Label text="Status:" styleClass="status-label-caption"/>
+            <Label fx:id="statusLabel" text="Ready" styleClass="status-label"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>

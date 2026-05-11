@@ -1,0 +1,256 @@
+/* ═══════════════════════════════════════════════════
+   Drawing Application – Style Sheet
+   Theme: Clean light with deep-blue accent
+═══════════════════════════════════════════════════ */
+
+/* Root */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f0f2f5;
+}
+
+/* ── Title Bar ───────────────────────────────────── */
+.top-panel {
+    -fx-background-color: #1a1f36;
+}
+
+.title-bar {
+    -fx-background-color: #1a1f36;
+    -fx-padding: 10 16;
+}
+
+.app-title {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Segoe UI Semibold", "Helvetica Neue", Arial, sans-serif;
+}
+
+.subtitle {
+    -fx-text-fill: #8892b0;
+    -fx-font-size: 11px;
+}
+
+/* ── Main Toolbar ────────────────────────────────── */
+.main-toolbar {
+    -fx-background-color: #232946;
+    -fx-padding: 8 16;
+    -fx-spacing: 6;
+}
+
+.toolbar-label {
+    -fx-text-fill: #a8b2d8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Shape toggle buttons */
+.shape-btn {
+    -fx-background-color: #2d3561;
+    -fx-text-fill: #ccd6f6;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #3d4a7a;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+    -fx-font-size: 12px;
+}
+
+.shape-btn:hover {
+    -fx-background-color: #3d4a7a;
+    -fx-text-fill: #ffffff;
+}
+
+.shape-btn:selected {
+    -fx-background-color: #4361ee;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #6b8cff;
+}
+
+/* Action buttons */
+.action-btn {
+    -fx-background-color: #2d3561;
+    -fx-text-fill: #ccd6f6;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #3d4a7a;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+    -fx-padding: 6 14;
+    -fx-font-size: 12px;
+}
+
+.action-btn:hover {
+    -fx-background-color: #3d4a7a;
+    -fx-text-fill: #ffffff;
+}
+
+.primary-btn {
+    -fx-background-color: #4361ee;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #6b8cff;
+}
+
+.primary-btn:hover {
+    -fx-background-color: #5a73f5;
+}
+
+.danger-btn {
+    -fx-background-color: #c0392b;
+    -fx-text-fill: #ffffff;
+    -fx-border-color: #e74c3c;
+}
+
+.danger-btn:hover {
+    -fx-background-color: #e74c3c;
+}
+
+/* Color picker */
+.color-picker-btn {
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-background-color: #2d3561;
+    -fx-border-color: #3d4a7a;
+    -fx-border-width: 1;
+    -fx-cursor: hand;
+}
+
+/* Log strategy combo */
+.log-combo {
+    -fx-background-color: #2d3561;
+    -fx-text-fill: #ccd6f6;
+    -fx-border-color: #3d4a7a;
+    -fx-border-width: 1;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-cursor: hand;
+}
+
+/* ── Left Panel ──────────────────────────────────── */
+.left-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 16;
+    -fx-border-color: #e0e4ef;
+    -fx-border-width: 0 1 0 0;
+}
+
+.panel-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #232946;
+    -fx-text-transform: uppercase;
+}
+
+.palette-card {
+    -fx-background-color: #f8f9ff;
+    -fx-background-radius: 8;
+    -fx-border-color: #e0e4ef;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+    -fx-cursor: default;
+}
+
+.shape-icon {
+    -fx-font-size: 22px;
+    -fx-text-fill: #4361ee;
+}
+
+.shape-name {
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: #232946;
+}
+
+.shape-hint {
+    -fx-font-size: 10px;
+    -fx-text-fill: #8892b0;
+}
+
+.info-card {
+    -fx-background-color: #f0f4ff;
+    -fx-background-radius: 8;
+    -fx-border-color: #c7d2fe;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+.tip {
+    -fx-font-size: 10px;
+    -fx-text-fill: #4361ee;
+}
+
+/* ── Drawing Canvas ──────────────────────────────── */
+.drawing-pane {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d0d7e8;
+    -fx-border-width: 0 1 0 0;
+    -fx-cursor: crosshair;
+
+    /* Grid background via CSS gradient trick */
+    -fx-background-image: none;
+}
+
+/* ── Right Panel ─────────────────────────────────── */
+.right-panel {
+    -fx-background-color: #ffffff;
+    -fx-padding: 16;
+    -fx-border-color: #e0e4ef;
+    -fx-border-width: 0 0 0 1;
+}
+
+.log-area {
+    -fx-background-color: #f4f6fb;
+    -fx-border-color: #dde3f0;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 11px;
+    -fx-text-fill: #3a4060;
+    -fx-control-inner-background: #f4f6fb;
+}
+
+/* ── Status Bar ──────────────────────────────────── */
+.status-bar {
+    -fx-background-color: #232946;
+    -fx-padding: 6 16;
+}
+
+.status-label-caption {
+    -fx-text-fill: #8892b0;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.status-label {
+    -fx-text-fill: #ccd6f6;
+    -fx-font-size: 11px;
+}
+
+/* ── Separator ───────────────────────────────────── */
+.separator {
+    -fx-background-color: #3d4a7a;
+}
+
+/* ── ScrollBar (minimal) ─────────────────────────── */
+.scroll-bar:vertical .track,
+.scroll-bar:horizontal .track {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #c7d2fe;
+    -fx-background-radius: 4;
+}
+
+/* ── Tooltip ─────────────────────────────────────── */
+.tooltip {
+    -fx-background-color: #1a1f36;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 4;
+    -fx-font-size: 11px;
+}
